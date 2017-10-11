@@ -1,0 +1,36 @@
+{
+    "name": "cordova-labs-local-webserver-ka",
+    "version": "1.0.0",
+    "description": "Cordova Local Web Server Plugin",
+    "cordova": {
+      "id": "cordova-labs-local-webserver",
+      "platforms": [
+        "ios"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "keywords": [
+      "cordova",
+      "local web server",
+      "ecosystem:cordova",
+      "cordova-ios"
+    ],
+    "engines": [
+      {
+        "name": "cordova-ios",
+        "version": ">=4.0.0-dev"
+      }
+    ],
+    "author": "",
+    "license": "Apache-2.0",
+    "bugs": {
+      "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+      "urijs": "^1.17.1"
+    }
+  }
