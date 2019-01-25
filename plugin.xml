@@ -17,7 +17,7 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<plugin id="cordova-labs-local-webserver-ka" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-labs-local-webserver-ka" version="1.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>CordovaLocalWebServer</name>
     <description>Cordova Local Web Server Plugin</description>
     <keywords>cordova,local web server</keywords>
@@ -25,8 +25,6 @@
 
     <hook type="after_plugin_install" src="scripts/after_install.js" />
     <hook type="before_plugin_uninstall" src="scripts/before_uninstall.js" />
-
-    <dependency id="cordova-plugin-file" />
 
     <engines>
         <engine name="cordova-ios" version=">=4.1.0" />
