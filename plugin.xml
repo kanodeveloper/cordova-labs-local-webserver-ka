@@ -17,30 +17,33 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<plugin id="cordova-labs-local-webserver-ka" version="1.0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-labs-local-webserver-ka" version="1.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>CordovaLocalWebServer</name>
     <description>Cordova Local Web Server Plugin</description>
     <keywords>cordova,local web server</keywords>
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugins.git</repo>
 
-    <hook type="after_plugin_install" src="scripts/after_install.js" />
-    <hook type="before_plugin_uninstall" src="scripts/before_uninstall.js" />
 
     <engines>
         <engine name="cordova-ios" version=">=4.1.0" />
     </engines>
 
-    <!-- ios -->
     <platform name="ios">
 
+				<preference name="CONTENT_SRC" default=""/>
+
+				<edit-config file="config.xml" target="/widget/content" mode="overwrite">
+		    	<content src="$CONTENT_SRC" />
+				</edit-config>
+
         <config-file target="config.xml" parent="/*">
-		    <feature name="CordovaLocalWebServer">
-			    <param name="ios-package" value="CDVLocalWebServer"/>
-			    <param name="onload" value="true"/>
-		    </feature>
-            <preference name="CordovaLocalWebServerStartOnSimulator" value="true" />
-			<access origin="http://localhost" />
-      <allow-navigation href="http://localhost:*/*" />
+		    	<feature name="CordovaLocalWebServer">
+			    	<param name="ios-package" value="CDVLocalWebServer"/>
+			    	<param name="onload" value="true"/>
+		    	</feature>
+          <preference name="CordovaLocalWebServerStartOnSimulator" value="true" />
+					<access origin="http://localhost" />
+      		<allow-navigation href="http://localhost:*/*" />
         </config-file>
 
 
@@ -82,11 +85,5 @@
 	    <framework src="MobileCoreServices.framework" />
 	    <framework src="CFNetwork.framework" />
         <framework src="libz.dylib" />
-
-        <info>
-        Your content tag in config.xml now points to a http://localhost:0 location (randomized port), e.g. &lt;content src="http://localhost:0" /&gt;
-        WARNING: For localStorage and IndexedDB persistence, you must choose a non-randomized port (between 1 and 49152, to avoid the ephemeral port range 49152 to 65535 on iOS).
-    </info>
-
     </platform>
 </plugin>

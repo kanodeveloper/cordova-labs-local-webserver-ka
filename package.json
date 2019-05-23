@@ -1,6 +1,6 @@
 {
     "name": "cordova-labs-local-webserver-ka",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Cordova Local Web Server Plugin",
     "cordova": {
       "id": "cordova-labs-local-webserver",
@@ -31,6 +31,7 @@
     },
     "homepage": "",
     "dependencies": {
-      "urijs": "^1.17.1"
+      "urijs": "^1.17.1",
+      "elementtree": "^0.1.7"
     }
   }
