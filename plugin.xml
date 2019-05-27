@@ -17,7 +17,7 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<plugin id="cordova-labs-local-webserver-ka" version="1.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-labs-local-webserver-ka" version="1.0.4" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>CordovaLocalWebServer</name>
     <description>Cordova Local Web Server Plugin</description>
     <keywords>cordova,local web server</keywords>
@@ -30,11 +30,7 @@
 
     <platform name="ios">
 
-				<preference name="CONTENT_SRC" default=""/>
-
-				<edit-config file="config.xml" target="/widget/content" mode="overwrite">
-		    	<content src="$CONTENT_SRC" />
-				</edit-config>
+				<preference name="CONTENT_SRC" default="index.html"/>
 
         <config-file target="config.xml" parent="/*">
 		    	<feature name="CordovaLocalWebServer">
