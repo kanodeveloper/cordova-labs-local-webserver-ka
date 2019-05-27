@@ -32,7 +32,9 @@ module.exports = function(context) {
     var etree = et.parse(data);
     var content_src = 'html';
 
-    var value = data.match(new RegExp('name="CONTENT_SRC" value="(.*?)"', "i"));
+    var platform_src = (context.opts.platforms.indexOf('android') < 0) ? "IOS_CONTENT_SRC" : "ANDROID_CONTENT_SRC";
+
+    var value = data.match(new RegExp('name="' + platform_src + '" value="(.*?)"', "i"));
     if(value && value[1]) {
         content_src = value[1];
     }
