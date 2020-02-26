@@ -270,6 +270,7 @@
                     NSString* indexType = [[[NSFileManager defaultManager] attributesOfItemAtPath:indexPath error:NULL] fileType];
                     if ([indexType isEqualToString:NSFileTypeRegular]) {
                         complete([GCDWebServerFileResponse responseWithFile:indexPath]);
+                        return;
                     }
                 }
                 response = [self.server _responseWithContentsOfDirectory:filePath];
